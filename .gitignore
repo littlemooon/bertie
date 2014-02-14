@@ -1,2 +1,4 @@
-_site/
+_site
 .DS_Store
+node_modules
+app/js/bower_components

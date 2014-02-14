@@ -1,0 +1,20 @@
+
+// ====================================================
+
+// UTILITIES
+
+// ====================================================
+
+.util-vertwrap {
+  position: relative;
+  display: table;
+  text-align: center;
+  width: 100%;
+  > * {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center; 
+  } 
+}
+
+// ====================================================

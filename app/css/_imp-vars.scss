@@ -1,0 +1,44 @@
+
+//:===================================================
+
+// VARS
+
+//:===================================================
+
+// Colors
+
+$color-light: #ffffff;
+$color-dark: #3d3d3d;
+$color-secondary: #ff6b59;
+$color-secondary-alt: #e81123;
+
+//:===================================================
+
+// Typography
+
+@font-face {
+  font-family: Socialglyphs;
+  src: url(fonts/socialglyphs-regular.svg#socialglyphs-regular) format("svg"), url(fonts/socialglyphs-regular.woff) format("woff"), url(fonts/socialglyphs-regular.eot); 
+}
+@font-face {
+  font-family: 'Oswald Regular';
+  src: url(fonts/Oswald-Regular.ttf) format("truetype"); 
+}
+@font-face {
+  font-family: 'Oswald Light';
+  src: url(fonts/Oswald-Light.ttf) format("truetype"); 
+}
+$font-header: 'Oswald Regular', sans-serif;
+$font-nav: 'Oswald Light', sans-serif;
+$font-text: Helvetica Neue,Helvetica,Arial,sans-serif;
+$font-social: Socialglyphs, sans-serif;
+
+//:===================================================
+
+// Media Queries
+
+$break-large: 1026px;
+$break-mid: 768px;
+$break-small: 540px;
+
+//:===================================================

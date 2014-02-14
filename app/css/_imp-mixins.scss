@@ -1,0 +1,29 @@
+
+// ====================================================
+
+// MIXINS
+
+// ====================================================
+
+@mixin breakpoint($point) {
+
+	@if $point == papa-bear {
+		@media only screen and (min-width: $break-large) {
+			@content;
+		} 
+	} @else if $point == mama-bear {
+		@media only screen and (min-width: $break-mid) {
+			@content;
+		} 
+	} @else if $point == baby-bear {
+		@media only screen and (min-width: $break-small) {
+			@content;
+		} 
+	} @else if $point == mobile-bear {
+		@media only screen and (max-width: $break-small) {
+			@content;
+		} 
+	}
+}
+
+// ====================================================

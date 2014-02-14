@@ -1,0 +1,30 @@
+
+// ====================================================
+
+/* VIDEO */
+
+// ====================================================
+
+.vid-list {
+  padding: 20px 5%;
+  width: 90%;
+  display: none;
+  @include breakpoint(mama-bear) {
+    width: 40%;
+    display: block;
+    float: left;
+  }
+}
+.vid {
+  display: none;
+  @include breakpoint(mama-bear) {
+    margin: 0 0 25% 0;
+    display: block;
+  }
+  &:last-child {
+    margin: 0;
+  }
+}
+.vid-show {
+  display: block;
+}
