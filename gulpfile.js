@@ -67,14 +67,14 @@ gulp.task('scripts', function() {
         // .pipe(uglify())
         .pipe(gulp.dest(dist + js));
     gulp.src(app + js + '/bower_components/{,*/}*.js')
-        // .pipe(concat(dist + js + '/main.js'))
+        // .pipe(concat('bower.js'))
         // .pipe(uglify())
         .pipe(gulp.dest(dist + js));
 });
 
 // minify images
 gulp.task('images', function () {
-    gulp.src(app + img + '/*.jpg')
+    return gulp.src(app + img + '/*.jpg')
         .pipe(imagemin())
         .pipe(gulp.dest(dist + img));
 });
@@ -101,7 +101,7 @@ gulp.task('jekyll', function () {
 
 // clean
 gulp.task('clean', function () {
-    gulp.src([dist + '/*', site + '/*'], {read: false})
+    return gulp.src([dist, site], {read: false})
         .pipe(clean({force: true}))
         .pipe(gulp.dest(dist));
 });
@@ -114,13 +114,15 @@ gulp.task('watch', function() {
     gulp.watch([app + '/*.{txt,html,ico}', app + '/_layouts/*.html'], ['move']);
 });
 
+// build task
+gulp.task('build', ['clean'], function() {
+    return gulp.start('lint', 'css', 'scripts','images','move');
+});
+
+// serve task
+gulp.task('serve', ['build'], function() {
+    gulp.start('jekyll', 'watch');
+});
+
 // default task
-gulp.task('default', [
-    'lint', 
-    'css', 
-    'scripts',
-    'images',
-    'move',
-    'jekyll',
-    'watch'
-]);
+gulp.task('default', [ 'clean', 'build', 'serve' ], function(){});

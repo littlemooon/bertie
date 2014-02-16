@@ -7,5 +7,6 @@
     "jquery.sticky": "~1.0.0",
     "jquery-easing": "*"
   },
-  "devDependencies": {}
+  "devDependencies": {
+  }
 }
