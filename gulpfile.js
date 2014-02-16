@@ -3,7 +3,8 @@
 
 // gulp watches for changes in 'app', processes and pushes to 'dist'
 // a jekyll server watches 'dist' and pushes to '_site'
-
+// jekyll runs over localhost:4000 by default
+ 
 // DISCLAIMER
 
 // clearly, this process does not concatenate/minify css or js
@@ -48,7 +49,7 @@ gulp.task('lint', function() {
 
 // compile sass
 gulp.task('css', function() {
-    gulp.src(app + css + '/*.sass')
+    gulp.src(app + css + '/*.scss')
         .pipe(sass())
         .pipe(gulp.dest(dist + css));
     gulp.src(app + css + '/vendor/*.css')
@@ -100,8 +101,9 @@ gulp.task('jekyll', function () {
 
 // clean
 gulp.task('clean', function () {
-    gulp.src([dist, site], {read: false})
-        .pipe(clean({force: true}));
+    gulp.src([dist + '/*', site + '/*'], {read: false})
+        .pipe(clean({force: true}))
+        .pipe(gulp.dest(dist));
 });
 
 // watch

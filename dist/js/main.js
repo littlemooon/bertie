@@ -1,48 +1,51 @@
-
 // ON DOCUMENT READY
 
-$(document).ready(function () {
+$(document).ready(function() {
 
-// ON WINDOW LOAD
+  // ON WINDOW LOAD
 
-  $(window).load(function () {
+  $(window).load(function() {
     $('#load').fadeOut().remove();
     $(window).trigger('hashchange');
     $(window).trigger('resize');
   });
 
-// Home image
+  // Home image
 
   function mainImage() {
-    $('#home').css({height: $(window).height()});
+    $('#home').css({
+      height: $(window).height()
+    });
   }
   mainImage();
 
-// Bigtext
+  // Bigtext
 
   function bigText() {
     $('#bigtext').bigtext();
   }
   bigText();
 
-// Sticky menu
+  // Sticky menu
 
-  if ( ! /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
-    $("nav").sticky({topSpacing: 0});
+  if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
+    $("nav").sticky({
+      topSpacing: 0
+    });
   }
 
-// Main menu
- 
+  // Main menu
+
   (function() {
     var $menu = $('.navbar-inner ul.nav'),
       optionsList = '<option value="" selected>Menu...</option>';
     $menu.find('li').each(function() {
-      var $this   = $(this),
-          $anchor = $this.children('a'),
-          depth   = $this.parents('ul').length - 1,
-          indent  = '';
-      if( depth ) {
-        while( depth > 0 ) {
+      var $this = $(this),
+        $anchor = $this.children('a'),
+        depth = $this.parents('ul').length - 1,
+        indent = '';
+      if (depth) {
+        while (depth > 0) {
           indent += ' - ';
           depth--;
         }
@@ -51,16 +54,16 @@ $(document).ready(function () {
     }).end();
   })();
 
-// ON RESIZE
+  // ON RESIZE
 
-  $(window).bind('resize', function () {
+  $(window).bind('resize', function() {
     mainImage();
     bigText();
   });
 
-// Smooth scrolling
+  // Smooth scrolling
 
-  $("nav a, .scroll-to").click(function () {
+  $("nav a, .scroll-to").click(function() {
 
     var headerH = $('nav').outerHeight();
     $("html, body").animate({
@@ -72,11 +75,11 @@ $(document).ready(function () {
     return false;
   });
 
-// Videos
- 
+  // Videos
+
   $(".vid-list").fitVids();
 
-// Fastclick
+  // Fastclick
 
   FastClick.attach(document.body);
 
