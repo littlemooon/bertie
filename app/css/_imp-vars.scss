@@ -8,7 +8,7 @@
 // Colors
 
 $color-light: #ffffff;
-$color-light-alt: #f4f4f4;
+$color-light-alt: #f9f9f9;
 $color-dark: #3d3d3d;
 $color-secondary: #ff6b59;
 $color-secondary-alt: #e81123;
@@ -23,15 +23,15 @@ $color-secondary-alt: #e81123;
 }
 @font-face {
   font-family: 'Oswald Regular';
-  src: url(fonts/Oswald-Regular.ttf) format("truetype"); 
+  src: url(fonts/Oswald-Regular.ttf) format("truetype"), url(fonts/Oswald-Regular.otf); 
 }
 @font-face {
   font-family: 'Oswald Light';
-  src: url(fonts/Oswald-Light.ttf) format("truetype"); 
+  src: url(fonts/Oswald-Light.ttf) format("truetype"), url(fonts/Oswald-Light.otf); 
 }
 $font-header: 'Oswald Regular', sans-serif;
 $font-nav: 'Oswald Light', sans-serif;
-$font-text: Helvetica Neue,Helvetica,Arial,sans-serif;
+$font-text: 'Helvetica Neue',Helvetica,Arial,sans-serif;
 $font-social: Socialglyphs, sans-serif;
 
 //:===================================================

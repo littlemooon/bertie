@@ -50,21 +50,17 @@
   -moz-box-sizing: border-box;
   -box-sizing: border-box;
   box-sizing: border-box;
+  resize: none !important;
 }
 .contact-input:hover,
 .contact-input[type="text"]:hover,
-.contact-input[type="email"]:hover,
+.contact-input[type="email"]:hover {
+  border-color: $color-secondary;
+}
 .contact-input:focus,
 .contact-input[type="text"]:focus,
 .contact-input[type="email"]:focus {
-  border-color: $color-secondary;
   background-color: $color-light-alt;
-  color: #222222;
-}
-.contact-input--textarea {
-  height: 160px !important;
-  overflow: auto;
-  resize: none;
 }
 .contact-outer {
   margin-bottom: 0;

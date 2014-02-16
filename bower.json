@@ -2,13 +2,10 @@
   "name": "bertiewright",
   "version": "0.1.0",
   "dependencies": {
-    "modernizr": "~2.6.2",
     "jquery": "~1.9.1",
     "fitvids": "~1.0.3",
     "jquery.sticky": "~1.0.0",
-    "jquery-easing": "*",
-    "jquery-smoothscroll": "~1.1.1",
-    "jquery-form": "~3.46.0"
+    "jquery-easing": "*"
   },
   "devDependencies": {}
 }
