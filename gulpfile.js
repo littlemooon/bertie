@@ -1,3 +1,19 @@
+
+// OVERVIEW
+
+// gulp watches for changes in 'app', processes and pushes to 'dist'
+// a jekyll server watches 'dist' and pushes to '_site'
+
+// DISCLAIMER
+
+// clearly, this process does not concatenate/minify css or js
+// this is meant for display purposes only 
+// and would not be the case on a production site
+
+//======================================================
+// SETUP
+//======================================================
+
 // gulp
 var gulp = require('gulp'); 
 
@@ -18,6 +34,10 @@ var site = './_site';
 var js = '/js';
 var css = '/css';
 var img = '/img';
+
+//======================================================
+// PROCESS
+//======================================================
 
 // lint js
 gulp.task('lint', function() {
@@ -68,10 +88,14 @@ gulp.task('move', function () {
         .pipe(gulp.dest(dist + css + '/fonts'));
 });
 
+//======================================================
+// SERVE
+//======================================================
+
 // run jekyll
 gulp.task('jekyll', function () {
     gulp.src('.')
-        .pipe(exec('jekyll serve'));
+        .pipe(exec('jekyll serve -w'));
 });
 
 // clean
@@ -82,20 +106,19 @@ gulp.task('clean', function () {
 
 // watch
 gulp.task('watch', function() {
-    gulp.watch(app + js + '/*.js', ['lint', 'scripts', 'jekyll']);
-    gulp.watch(app + css + '/*.scss', ['css', 'jekyll']);
-    gulp.watch(app + img + '/*.jpg', ['images', 'jekyll']);
-    gulp.watch(app + '/*.html', ['move', 'jekyll']);
+    gulp.watch(app + js + '/*.js', ['lint', 'scripts']);
+    gulp.watch(app + css + '/*.scss', ['css']);
+    gulp.watch(app + img + '/*.jpg', ['images']);
+    gulp.watch([app + '/*.{txt,html,ico}', app + '/_layouts/*.html'], ['move']);
 });
 
 // default task
 gulp.task('default', [
-            'clean',
-            'lint', 
-            'css', 
-            'scripts',
-            'images',
-            'move',
-            'jekyll',
-            'watch'
-        ]);
+    'lint', 
+    'css', 
+    'scripts',
+    'images',
+    'move',
+    'jekyll',
+    'watch'
+]);
