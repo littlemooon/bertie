@@ -1,15 +1,29 @@
 /* VARS */
 @font-face {
   font-family: Socialglyphs;
-  src: url(fonts/socialglyphs-regular.svg#socialglyphs-regular) format("svg"), url(fonts/socialglyphs-regular.woff) format("woff"), url(fonts/socialglyphs-regular.eot); }
+  src: url(fonts/socialglyphs-regular.svg#socialglyphs-regular) format('svg'), url(fonts/socialglyphs-regular.woff) format('woff'), url(fonts/socialglyphs-regular.eot); }
 
 @font-face {
-  font-family: 'Oswald Regular';
-  src: url(fonts/Oswald-Regular.ttf) format("truetype"), url(fonts/Oswald-Regular.otf); }
+  font-family: 'Oswald';
+  src: url('fonts/oswald-webfont.eot');
+  src: local('☺︎'), url("fonts/oswald-webfont.woff") format("woff"), url("fonts/oswald-webfont.otf") format("opentype"), url('fonts/oswald-webfont.ttf') format('truetype'), url("fonts/oswald-webfont.svg#oswald") format("svg"); }
+
+@media screen and (max-device-width: 480px) {
+  @font-face {
+    font-family: "Oswald";
+    src: url("fonts/oswald-webfont.woff") format("woff"), url("fonts/oswald-webfont.otf") format("opentype"), url('fonts/oswald-webfont.ttf') format('truetype'), url("fonts/oswald-webfont.svg#oswald") format("svg"); }
+ }
 
 @font-face {
   font-family: 'Oswald Light';
-  src: url(fonts/Oswald-Light.ttf) format("truetype"), url(fonts/Oswald-Light.otf); }
+  src: url('fonts/oswald-light-webfont.eot');
+  src: local('☺︎'), url("fonts/oswald-light-webfont.woff") format("woff"), url("fonts/oswald-light-webfont.otf") format("opentype"), url('fonts/oswald-light-webfont.ttf') format('truetype'), url("fonts/oswald-light-webfont.svg#oswald") format("svg"); }
+
+@media screen and (max-device-width: 480px) {
+  @font-face {
+    font-family: "Oswald Light";
+    src: url("fonts/oswald-light-webfont.woff") format("woff"), url("fonts/oswald-light-webfont.otf") format("opentype"), url('fonts/oswald-light-webfont.ttf') format('truetype'), url("fonts/oswald-light-webfont.svg#oswald") format("svg"); }
+ }
 
 /* MIXINS */
 /* UTILITIES */
@@ -36,7 +50,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
   overflow-x: hidden;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
   padding: 0; }
 
 body #load {
@@ -52,7 +66,7 @@ body #load {
   color: #ffffff; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Oswald Regular', sans-serif;
+  font-family: 'Oswald Light', "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
   font-weight: normal; }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -146,7 +160,7 @@ a, a:active, a:focus, input, input:active, input:focus, select, select:active, s
   float: none; }
 
 .main-menu .nav > li > a {
-  font-family: 'Oswald Light', sans-serif;
+  font-family: 'Oswald Light', "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
   font-weight: 300;
   font-size: 16px;
   text-decoration: none;
@@ -223,7 +237,7 @@ img.bg {
 .bigtext {
   width: 100%; }
   .bigtext h1 {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
     line-height: 90vh;
     margin: 0; }
 
@@ -284,7 +298,7 @@ img.bg {
     width: 33%; }
 
 .social-link {
-  font-family: Socialglyphs, sans-serif;
+  font-family: Socialglyphs, "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
   font-size: 4rem;
   line-height: 80%; }
   @media only screen and (min-width: 540px) {
@@ -327,7 +341,7 @@ img.bg {
 
 .contact-button {
   font-size: 18px;
-  font-family: 'Oswald Regular', sans-serif;
+  font-family: 'Oswald Light', "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
   text-transform: uppercase;
   background-color: #ff6b59;
   color: #ffffff;

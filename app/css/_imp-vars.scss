@@ -1,9 +1,9 @@
 
-//:===================================================
+//===================================================
 
 /* VARS */
 
-//:===================================================
+//===================================================
 
 // Colors
 
@@ -13,28 +13,57 @@ $color-dark: #3d3d3d;
 $color-secondary: #ff6b59;
 $color-secondary-alt: #e81123;
 
-//:===================================================
+//===================================================
 
 // Typography
 
 @font-face {
   font-family: Socialglyphs;
-  src: url(fonts/socialglyphs-regular.svg#socialglyphs-regular) format("svg"), url(fonts/socialglyphs-regular.woff) format("woff"), url(fonts/socialglyphs-regular.eot); 
+  src: url(fonts/socialglyphs-regular.svg#socialglyphs-regular) format('svg'), 
+  	url(fonts/socialglyphs-regular.woff) format('woff'), 
+  	url(fonts/socialglyphs-regular.eot); 
 }
 @font-face {
-  font-family: 'Oswald Regular';
-  src: url(fonts/Oswald-Regular.ttf) format("truetype"), url(fonts/Oswald-Regular.otf); 
-}
+  font-family: 'Oswald';
+  src: url('fonts/oswald-webfont.eot');
+  src: local('☺︎'),
+    url("fonts/oswald-webfont.woff") format("woff"),
+    url("fonts/oswald-webfont.otf") format("opentype"),
+    url('fonts/oswald-webfont.ttf') format('truetype'),
+    url("fonts/oswald-webfont.svg#oswald") format("svg");
+  }
+@media screen and (max-device-width: 480px) {
+  @font-face {
+    font-family: "Oswald";
+    src: url("fonts/oswald-webfont.woff") format("woff"),
+    url("fonts/oswald-webfont.otf") format("opentype"),
+    url('fonts/oswald-webfont.ttf') format('truetype'),
+    url("fonts/oswald-webfont.svg#oswald") format("svg");
+}}
 @font-face {
   font-family: 'Oswald Light';
-  src: url(fonts/Oswald-Light.ttf) format("truetype"), url(fonts/Oswald-Light.otf); 
-}
-$font-header: 'Oswald Regular', sans-serif;
-$font-nav: 'Oswald Light', sans-serif;
-$font-text: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-$font-social: Socialglyphs, sans-serif;
+  src: url('fonts/oswald-light-webfont.eot');
+  src: local('☺︎'),
+    url("fonts/oswald-light-webfont.woff") format("woff"),
+    url("fonts/oswald-light-webfont.otf") format("opentype"),
+    url('fonts/oswald-light-webfont.ttf') format('truetype'),
+    url("fonts/oswald-light-webfont.svg#oswald") format("svg");
+  }
+@media screen and (max-device-width: 480px) {
+  @font-face {
+    font-family: "Oswald Light";
+    src: url("fonts/oswald-light-webfont.woff") format("woff"),
+    url("fonts/oswald-light-webfont.otf") format("opentype"),
+    url('fonts/oswald-light-webfont.ttf') format('truetype'),
+    url("fonts/oswald-light-webfont.svg#oswald") format("svg");
+}}
 
-//:===================================================
+$font-header: 'Oswald Light', "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; 
+$font-nav: 'Oswald Light', "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; 
+$font-text: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; 
+$font-social: Socialglyphs, "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; 
+
+//===================================================
 
 // Media Queries
 
@@ -42,4 +71,4 @@ $break-large: 1026px;
 $break-mid: 768px;
 $break-small: 540px;
 
-//:===================================================
+//===================================================

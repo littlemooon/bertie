@@ -13,7 +13,8 @@
     "gulp-browserify": "~0.4.4",
     "gulp-imagemin": "~0.1.5",
     "gulp-clean": "~0.2.4",
-    "gulp-exec": "~1.0.4"
+    "gulp-exec": "~1.0.4",
+    "bower": "~1.2.8"
   },
   "engines": {
     "node": ">=0.8.0"

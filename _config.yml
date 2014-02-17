@@ -1,4 +1,4 @@
 name: Bertie Wright
 markdown: redcarpet
 pygments: true
-source: ./dist
+source: dist

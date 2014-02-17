@@ -1,5 +1,7 @@
 
+//======================================================
 // OVERVIEW
+//======================================================
 
 // gulp watches for changes in 'app', processes and pushes to 'dist'
 // a jekyll server watches 'dist' and pushes to '_site'
