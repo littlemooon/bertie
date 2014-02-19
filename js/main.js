@@ -28,11 +28,11 @@ $(document).ready(function() {
 
   // Sticky menu
 
-  if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
+
     $("nav").sticky({
       topSpacing: 0
     });
-  }
+  
 
   // Main menu
 
