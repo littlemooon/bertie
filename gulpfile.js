@@ -4,7 +4,7 @@
 //======================================================
 
 // gulp watches for changes in 'app', processes and pushes to 'dist'
-// a jekyll server watches 'dist' and pushes to '_site'
+// a jekyll server watches 'dist' and pushes to 'site'
 // jekyll runs over localhost:4000 by default
  
 // DISCLAIMER
@@ -31,12 +31,13 @@ var clean = require('gulp-clean');
 var exec = require('gulp-exec');
 
 // paths
-var app = './app';
-var dist = './dist';
+var app = './_app';
+var dist = '.';
 var site = './_site';
 var js = '/js';
 var css = '/css';
 var img = '/img';
+var layouts = '/_layouts';
 
 //======================================================
 // PROCESS
@@ -85,8 +86,8 @@ gulp.task('images', function () {
 gulp.task('move', function () {
     gulp.src(app + '/*.{txt,html,ico}')
         .pipe(gulp.dest(dist));
-    gulp.src(app + '/_layouts/*.html')
-        .pipe(gulp.dest(dist + '/_layouts'));
+    gulp.src(app + layouts + '/*.html')
+        .pipe(gulp.dest(dist + layouts));
     gulp.src(app + css + '/fonts/*')
         .pipe(gulp.dest(dist + css + '/fonts'));
 });
@@ -95,7 +96,7 @@ gulp.task('move', function () {
 // SERVE
 //======================================================
 
-// run jekyll
+// run jekyll with watch
 gulp.task('jekyll', function () {
     gulp.src('.')
         .pipe(exec('jekyll serve -w'));
@@ -103,9 +104,15 @@ gulp.task('jekyll', function () {
 
 // clean
 gulp.task('clean', function () {
-    return gulp.src([dist, site], {read: false})
+    return gulp.src([
+            site, 
+            dist + js, 
+            dist + css,
+            dist + img,
+            dist + layouts
+        ], {read: false})
         .pipe(clean({force: true}))
-        .pipe(gulp.dest(dist));
+        .pipe(gulp.dest(''));
 });
 
 // watch
@@ -113,18 +120,18 @@ gulp.task('watch', function() {
     gulp.watch(app + js + '/*.js', ['lint', 'scripts']);
     gulp.watch(app + css + '/*.scss', ['css']);
     gulp.watch(app + img + '/*.jpg', ['images']);
-    gulp.watch([app + '/*.{txt,html,ico}', app + '/_layouts/*.html'], ['move']);
+    gulp.watch([app + '/*.{txt,html,ico}', app + layouts + '/*.html'], ['move']);
 });
 
-// build task
+// build
 gulp.task('build', ['clean'], function() {
     return gulp.start('lint', 'css', 'scripts','images','move');
 });
 
-// serve task
+// serve
 gulp.task('serve', ['build'], function() {
     gulp.start('jekyll', 'watch');
 });
 
-// default task
+// default
 gulp.task('default', [ 'clean', 'build', 'serve' ], function(){});
