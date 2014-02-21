@@ -190,7 +190,9 @@ a, a:active, a:focus, input, input:active, input:focus, select, select:active, s
   padding: 60px 0 10% 0; }
 
 .page-home {
-  background-color: rgba(255, 255, 255, 0.3); }
+  background-color: rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden; }
   .page-home a {
     width: 100%; }
     .page-home a:hover {
@@ -240,6 +242,20 @@ img.bg {
     font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
     line-height: 90vh;
     margin: 0; }
+
+.arrow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 0;
+  height: 0;
+  z-index: -1;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 43.3px solid white; }
 
 .images {
   display: none; }
