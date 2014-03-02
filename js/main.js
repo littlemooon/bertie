@@ -14,7 +14,7 @@ $(document).ready(function() {
 
   function mainImage() {
     $('#home').css({
-      height: $(window).height()
+      height: $(window).height()-40
     });
   }
   mainImage();
