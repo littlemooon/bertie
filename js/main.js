@@ -28,11 +28,10 @@ $(document).ready(function() {
 
   // Sticky menu
 
-  if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
-    $("nav").sticky({
-      topSpacing: 0
-    });
-  }
+  $("nav").sticky({
+    topSpacing: 0
+  });
+  
 
   // Main menu
 
@@ -54,13 +53,6 @@ $(document).ready(function() {
     }).end();
   })();
 
-  // ON RESIZE
-
-  $(window).bind('resize', function() {
-    mainImage();
-    bigText();
-  });
-
   // Smooth scrolling
 
   $("nav a, .scroll-to").click(function() {
@@ -73,14 +65,21 @@ $(document).ready(function() {
       easing: "easeInOutExpo"
     });
     return false;
-  });
+  });  
 
   // Videos
 
-  $(".vid-list").fitVids();
+  function videos() {
+    $(".vid-list").fitVids();
+    optimizeYouTubeEmbeds1();
+    $(".fluid-width-video-wrapper").css("padding-top", 0);
+  }
+  videos();
 
-  // Fastclick
+  // ON RESIZE
 
-  FastClick.attach(document.body);
-
+  $(window).bind('resize', function() {
+    mainImage();
+    bigText();
+  });
 });
