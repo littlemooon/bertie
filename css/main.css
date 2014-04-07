@@ -181,7 +181,9 @@ a, a:active, a:focus, input, input:active, input:focus, select, select:active, s
 /* STRUCTURE */
 .container {
   max-width: 960px;
-  padding: 0 5%; }
+  padding: 0 5%;
+  width: 90%;
+  margin: 0 auto; }
 
 .page-wrapper {
   position: relative;
