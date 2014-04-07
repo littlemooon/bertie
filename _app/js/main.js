@@ -5,8 +5,6 @@ $(document).ready(function() {
   // ON WINDOW LOAD
 
   $(window).load(function() {
-    $('#load').fadeOut().remove();
-    $(window).trigger('hashchange');
     $(window).trigger('resize');
   });
 
