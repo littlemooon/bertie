@@ -29,11 +29,11 @@
   display: table;
   clear: both; }
 
-#bio, #video, #live, #contact {
+#bio, #video, #live, .live__transparent, .live__after, #contact {
   position: relative;
   z-index: 100;
   background-color: white;
-  padding: 60px 0 10% 0; }
+  padding: 5% 0 10% 0; }
 
 .live__images ul, .contact__links {
   position: relative;
@@ -286,6 +286,8 @@ ul {
 /* BIO */
 
 /* VIDEO */
+#video {
+  padding-bottom: 15%; }
 
 .video__header .social-link {
   font-size: 2.8rem; }
@@ -316,8 +318,16 @@ ul {
   padding: 0; }
 
 /* LIVE */
-#live p {
-  text-align: center; }
+#live {
+  padding: 5% 0 0 0; }
+
+.live__transparent {
+  background-color: rgba(255, 255, 255, 0.85); }
+  .live__transparent p {
+    text-align: center; }
+
+.live__after {
+  padding: 0 0 10% 0; }
 
 .live__images {
   display: none; }
