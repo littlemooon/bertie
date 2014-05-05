@@ -23,16 +23,10 @@ body {
   line-height: 20px;
   margin: 0 0 0 0;
 }
-.hide {
-  display: none !important;
-}
-.show {
-  display: block !important;
-}
 
 //===================================================
 
-// Typography
+// typography
 
 ::-moz-selection, ::selection {
   background: $color-secondary;
@@ -60,22 +54,10 @@ p {
   margin: 0 0 20px 0;
   text-align: justify;
 }
-.highlight {
-  color: $color-secondary;
-  font-weight: bold;
-}
-.social-link {
-  font-family: $font-social;
-  font-size: 4rem;
-  line-height: 80%;
-  @include breakpoint(baby-bear) {
-    font-size: 6rem;
-  }
-}
 
 //===================================================
 
-// Links
+// links
 
 a {
   color: $color-secondary;
@@ -87,6 +69,11 @@ a {
     transition: all 0.3s ease-out;
   }
 }
+
+//===================================================
+
+// areas
+
 button, input, select, textarea {
   vertical-align: middle;
 }
@@ -99,7 +86,7 @@ textarea, textarea:active, textarea:focus {
 
 //===================================================
 
-// Images
+// images
 
 img {
   -ms-interpolation-mode: bicubic;
@@ -111,10 +98,11 @@ img {
 
 //===================================================
 
-// Lists
+// lists
 
 ul {
   padding: 0 0 0 0;
+  list-style: none;
 }
 
 //===================================================
