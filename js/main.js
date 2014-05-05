@@ -15,14 +15,12 @@ $(document).ready(function() {
     $(window).trigger('resize');
   });
 
-  // Home image
+  // Home page
 
-  function mainImage() {
-    $('#home').css({
-      height: $(window).height()-40
-    });
+  function homePage() {
+    $('#home').css("min-height", $(window).height()-40);
   }
-  mainImage();
+  homePage();
 
   // Bigtext
 
@@ -41,7 +39,7 @@ $(document).ready(function() {
 
   $(".nav__list__item a, .home__link").click(function() {
 
-    var headerH = $('nav').outerHeight();
+    var headerH = $('#nav').outerHeight();
     $("html, body").animate({
       scrollTop: $($(this).attr("href")).offset().top - headerH + "px"
     }, {
@@ -63,7 +61,7 @@ $(document).ready(function() {
   // ON RESIZE
 
   $(window).bind('resize', function() {
-    mainImage();
+    homePage();
     bigText();
   });
 });

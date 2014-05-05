@@ -38,6 +38,7 @@
                             .removeClass(s.className);
                         s.stickyElement.parent().removeClass(s.className);
                         s.currentTop = null;
+                        $('.home__background').attr("src","img/bg.jpg");
                     }
                 }
                 else {
@@ -55,6 +56,7 @@
                             .addClass(s.className);
                         s.stickyElement.parent().addClass(s.className);
                         s.currentTop = newTop;
+                        $('.home__background').attr("src","img/bg2.jpg");
                     }
                 }
             }
