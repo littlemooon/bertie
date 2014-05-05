@@ -11,24 +11,21 @@
 }
 
 .contact__links {
-  @extend %vertwrap;
   width: 90%;
   margin: 0 auto 12.5% auto;
   @include breakpoint(baby-bear) {
     width: 70%;
   }
-  a {
-    width: 33%;
-  }
+}
+.contact__links__item {
+  float: left;
+  display: block;
+  width: 33%;
+  text-align: center;
 }
 
 .contact__form {
   margin-bottom: 30px;
-  width: 100%;
-  @include breakpoint(mama-bear) {
-    width: 2/3*100%;
-    margin-left: 1/6*100%;
-  }
 }
 .contact__form__outer {
   @extend %clearfix;
@@ -37,6 +34,7 @@
 .contact__form__text {
   margin: 0;
   padding: 20px 0 0 0;
+  text-indent: 1em;
 }
 
 .contact__input {
@@ -80,10 +78,6 @@
   &:hover {
     background-color: $color-secondary-alt;
   }
-}
-
-.text-center {
-  text-align: center;
 }
 
 //===================================================

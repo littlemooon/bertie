@@ -15,27 +15,27 @@ $(document).ready(function() {
     $(window).trigger('resize');
   });
 
-  // Home page
+  // home page
 
   function homePage() {
     $('#home').css("min-height", $(window).height()-40);
   }
   homePage();
 
-  // Bigtext
+  // bigtext
 
   function bigText() {
     $('.home__title__text').bigtext();
   }
   bigText();
 
-  // Sticky menu
+  // sticky menu
 
   $("#nav").sticky({
     topSpacing: 0
   });
 
-  // Smooth scrolling
+  // smooth scrolling
 
   $(".nav__list__item a, .home__link").click(function() {
 
@@ -49,7 +49,7 @@ $(document).ready(function() {
     return false;
   });  
 
-  // Videos
+  // videos
 
   function videos() {
     $(".video__list").fitVids();
