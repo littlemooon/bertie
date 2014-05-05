@@ -9,7 +9,7 @@ html {
   font-size: 100%;
   overflow-y: scroll;
   -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%; 
+  -ms-text-size-adjust: 100%;
 }
 body {
   background-color: $color-light;
@@ -18,92 +18,103 @@ body {
   -webkit-text-size-adjust: 100%;
   overflow-x: hidden;
   font-family: $font-text;
-  padding: 0; 
+  padding: 0;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0 0 0 0;
 }
-body #load {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  overflow: hidden;
-  z-index: 1001;
-  background-color: $color-light; 
+.hide {
+  display: none !important;
 }
+.show {
+  display: block !important;
+}
+
+//===================================================
+
 // Typography
 
-::-moz-selection,
-::selection {
+::-moz-selection, ::selection {
   background: $color-secondary;
-  color: $color-light; 
+  color: $color-light;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: $font-header;
-  font-weight: normal; 
+  font-weight: normal;
+  text-rendering: optimizelegibility;
+  a {
+    font-weight: inherit;
+  }
 }
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
-  font-weight: inherit; 
-}
-.title-inner h1 {
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 40px;
+h1, h2, h3 {
   line-height: 40px;
-  margin-bottom: 10%; 
 }
 h2 {
   margin: 5% 0 10% 0;
-  text-align: center; 
+  text-align: center;
+  font-size: 2rem;
 }
 p {
   font-size: 16px;
   line-height: 24px;
-  margin-bottom: 20px;
-  text-align: justify; 
+  margin: 0 0 20px 0;
+  text-align: justify;
 }
+.highlight {
+  color: $color-secondary;
+  font-weight: bold;
+}
+.social-link {
+  font-family: $font-social;
+  font-size: 4rem;
+  line-height: 80%;
+  @include breakpoint(baby-bear) {
+    font-size: 6rem;
+  }
+}
+
+//===================================================
+
+// Links
+
 a {
   color: $color-secondary;
   text-decoration: none;
-  -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  -ms-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out; 
+  transition: all 0.3s ease-out;
+  &:hover {
+    color: $color-secondary-alt;
+    text-decoration: none;
+    transition: all 0.3s ease-out;
+  }
 }
-.txt-highlight {
-  color: $color-secondary;
-  font-weight: bold; 
+button, input, select, textarea {
+  vertical-align: middle;
 }
-// Other
+a, a:active, a:focus,
+input, input:active, input:focus,
+select, select:active, select:focus,
+textarea, textarea:active, textarea:focus {
+  outline: 0 !important;
+}
+
+//===================================================
+
+// Images
 
 img {
-  -ms-interpolation-mode: bicubic; 
+  -ms-interpolation-mode: bicubic;
+  max-width: 100%;
+  overflow-x: visible;
+  overflow-y: visible;
+  position: static;
 }
-a:hover {
-  color: $color-secondary-alt;
-  text-decoration: none;
-  -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  -ms-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out; 
+
+//===================================================
+
+// Lists
+
+ul {
+  padding: 0 0 0 0;
 }
-a,
-a:active,
-a:focus,
-input,
-input:active,
-input:focus,
-select,
-select:active,
-select:focus {
-  outline: 0 !important; 
-}
+
+//===================================================

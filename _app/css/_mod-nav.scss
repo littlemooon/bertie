@@ -5,65 +5,76 @@
 
 // ====================================================
 
-#undefined-sticky-wrapper {
-  position: absolute;
-  width: 100%;
-  z-index: 1000;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -box-sizing: border-box;
-  box-sizing: border-box;
-}
-.main-menu {
+#nav {
   width: 100%;
   z-index: 1000;
   background-color: $color-light;
 }
-.main-menu .navbar-inner {
+
+.nav__inner {
+  @extend %clearfix;
   background-image: none;
   filter: none;
   background-color: $color-light;
-  -webkit-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0);
-  -moz-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0);
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0);
   border-color: #FFF;
   padding: 0;
+  min-height: 41px;
   @include breakpoint(baby-bear) {
     padding: 0 5%;
   }
 }
-.main-menu .navbar-fixed-top,
-.main-menu .navbar-fixed-bottom,
-.main-menu .navbar-static-top {
-  margin: 0;
-}
-.main-menu .nav {
+
+.nav__list {
   float: none;
   width: 100%;
   display: block;
   text-align: center;
   margin: 0;
+  position: relative;
+  list-style-image: none;
+  list-style-position: outside;
+  list-style-type: none;
+  left: 0;
 }
-.main-menu .nav > li {
+.nav__list__item {
   display: inline-block;
   float: none;
-}
-.main-menu .nav > li > a {
-  font-family: $font-nav;
-  font-weight: 300;
-  font-size: 16px;
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 10px 10px 10px;
-  @include breakpoint(baby-bear) {
-    padding: 10px 15px 10px;
+  list-style-image: none;
+  list-style-position: outside;
+  list-style-type: none;
+  a {
+    color: $color-dark-alt;
+    font-family: $font-nav;
+    font-weight: 300;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 10px 10px;
+    display: block;
+    float: none;
+    &:hover {
+      color: $color-secondary;
+      transition: color 0.5s;
+    }
+    @include breakpoint(baby-bear) {
+      padding: 10px 15px 10px;
+    }
   }
 }
-.main-menu .nav > li > a:hover {
-  color: $color-secondary;
-  -webkit-transition: color 0.5s;
-  -moz-transition: color 0.5s;
-  -ms-transition: color 0.5s;
-  -o-transition: color 0.5s;
-  transition: color 0.5s;
+
+// jQuery sticky
+.navbar-static-top {
+  overflow-x: visible;
+  overflow-y: visible;
+  position: static;
+  margin: 0;
 }
+#undefined-sticky-wrapper {
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+//===================================================

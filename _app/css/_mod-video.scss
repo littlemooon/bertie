@@ -5,26 +5,41 @@
 
 // ====================================================
 
-.vid-list {
-  padding: 20px 5%;
-  width: 90%;
-  display: none;
+#video {
+  @extend %section;
+}
+
+.video__header .social-link {
+  font-size: 2.8rem;
+}
+
+.video__list {
+  padding: 20px 0;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
   @include breakpoint(mama-bear) {
-    width: 40%;
-    display: block;
+    padding: 0 5%;
+    width: 50%;
     float: left;
   }
 }
-.vid {
+.video__list__item {
   display: none;
-  @include breakpoint(mama-bear) {
-    margin: 0 0 25% 0;
-    display: block;
-  }
   &:last-child {
     margin: 0;
   }
+  @include breakpoint(mama-bear) {
+    margin: 0 0 15% 0;
+    display: block;
+  }
 }
-.vid-show {
-  display: block;
+
+// optimise youtube embeds
+.fluid-width-video-wrapper {
+  width: 100%;
+  position: relative;
+  padding: 0;
 }
+
+//===================================================

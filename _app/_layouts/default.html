@@ -12,8 +12,6 @@
   <meta name="author" content="Fred Wright">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-  <link rel="stylesheet" href="css/bootstrap-responsive.min.css" type="text/css">
   <link rel="stylesheet" href="css/main.css">
 
   <!--[if lt IE 10]>
@@ -24,14 +22,13 @@
 
 <body>
 
+<!-- HOME -->
 
-<!-- BACKGROUND -->
-
-<div id="home" class="page-home">
-  <img class="bg" src="img/bg.jpg" alt="bertie wright">
-  <a href="#bio" alt="biography" class="scroll-to">
-    <div class="bigtextWrap">
-      <div id="bigtext">
+<div id="home">
+  <img class="home__background" src="img/bg.jpg" alt="bertie wright">
+  <a href="#bio" alt="biography" class="home__link">
+    <div class="home__title">
+      <div class="home__title__text">
         <h1>bertie</h1>
       </div>
     </div>
@@ -40,15 +37,15 @@
 
 <!-- NAV -->
 
-<nav class="main-menu">
-  <div class="navbar navbar-static-top">
-    <div class="navbar-inner">
-      <ul class="nav">
-        <li><a href="#home" alt="home">Home</a></li>
-        <li><a href="#bio" alt="biography">bio</a></li>
-        <li><a href="#video" alt="videos">video</a></li>
-        <li><a href="#live" alt="live details">live</a></li>
-        <li><a href="#contact" alt="contact me">contact</a></li>
+<nav id="nav">
+  <div class="navbar-static-top">
+    <div class="nav__inner">
+      <ul class="nav__list">
+        <li class="nav__list__item"><a href="#home" alt="home">Home</a></li>
+        <li class="nav__list__item"><a href="#bio" alt="biography">bio</a></li>
+        <li class="nav__list__item"><a href="#video" alt="videos">video</a></li>
+        <li class="nav__list__item"><a href="#live" alt="live details">live</a></li>
+        <li class="nav__list__item"><a href="#contact" alt="contact me">contact</a></li>
       </ul>
     </div>
   </div>
@@ -58,15 +55,15 @@
 
 <!-- FOOTER -->
 
-<div class="page-footer">
-
-  <div class="copyright">
+<div id="footer">
+  <div class="footer__copyright">
     <div class="container">
       <a href="http://github.com/fredwright"  alt="fred wright github" target="_blank">design by fred wright</a>
     </div>
   </div>
-
 </div>
+
+<!-- SCRIPTS -->
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/jquery/jquery.min.js"><\/script>');</script>

@@ -5,67 +5,62 @@
 
 // ====================================================
 
-.contact-links {
-  @extend .util-vertwrap;
+
+#contact {
+  @extend %section;
+}
+
+.contact__links {
+  @extend %vertwrap;
   width: 90%;
   margin: 0 auto 12.5% auto;
   @include breakpoint(baby-bear) {
-    width: 70%;   
+    width: 70%;
   }
   a {
     width: 33%;
   }
-}  
-.social-link {
-  font-family: $font-social;
-  font-size: 4rem;
-  line-height: 80%;
-  @include breakpoint(baby-bear) { 
-    font-size: 6rem;
-  }
-}
-.contact-form {
-  margin-bottom: 30px;
 }
 
-.contact-input,
-.contact-input[type="text"],
-.contact-input[type="email"] {
-  border-width: 1px;
-  border-color: #999999;
+.contact__form {
+  margin-bottom: 30px;
+  width: 100%;
+  @include breakpoint(mama-bear) {
+    width: 2/3*100%;
+    margin-left: 1/6*100%;
+  }
+}
+.contact__form__outer {
+  @extend %clearfix;
+  margin-bottom: 0;
+}
+.contact__form__text {
+  margin: 0;
+  padding: 20px 0 0 0;
+}
+
+.contact__input {
+  border: 1px solid #999;
   background-color: $color-light;
   color: #333333;
   padding: 10px 15px;
   height: auto;
   font-size: 13px;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
   box-shadow: none;
-  -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  -ms-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -box-sizing: border-box;
   box-sizing: border-box;
   resize: none !important;
+  border-radius: 4px;
+  &:hover {
+    border-color: $color-secondary;
+  }
+  &:focus {
+    border-color: $color-secondary;
+    background-color: $color-light-alt;
+  }
 }
-.contact-input:hover,
-.contact-input[type="text"]:hover,
-.contact-input[type="email"]:hover {
-  border-color: $color-secondary;
-}
-.contact-input:focus,
-.contact-input[type="text"]:focus,
-.contact-input[type="email"]:focus {
-  background-color: $color-light-alt;
-}
-.contact-outer {
-  margin-bottom: 0;
-}
-.contact-button {
+
+.contact__button {
   font-size: 18px;
   font-family: $font-header;
   text-transform: uppercase;
@@ -74,25 +69,21 @@
   padding: 13px 20px 10px 20px;
   margin-top: 10px;
   margin-bottom: 20px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
   border-radius: 3px;
   background-image: none;
   filter: none;
   text-shadow: none;
   border: none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
   box-shadow: none;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
   background-clip: padding-box;
-  -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  -ms-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
+  &:hover {
+    background-color: $color-secondary-alt;
+  }
 }
-.contact-button:hover {
-  background-color: $color-secondary-alt;
+
+.text-center {
+  text-align: center;
 }
+
+//===================================================

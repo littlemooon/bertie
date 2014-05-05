@@ -38,6 +38,7 @@ var js = '/js';
 var css = '/css';
 var img = '/img';
 var layouts = '/_layouts';
+var prefix = require('gulp-autoprefixer');
 
 //======================================================
 // PROCESS
@@ -50,12 +51,11 @@ gulp.task('lint', function() {
         .pipe(jshint.reporter('default'));
 });
 
-// compile sass
+// compile sass and autoprefix
 gulp.task('css', function() {
     gulp.src(app + css + '/*.scss')
         .pipe(sass())
-        .pipe(gulp.dest(dist + css));
-    gulp.src(app + css + '/vendor/*.css')
+        .pipe(prefix(["last 1 version", "> 1%", "ie 8", "ie 7"], { cascade: true }))
         .pipe(gulp.dest(dist + css));
 });
 

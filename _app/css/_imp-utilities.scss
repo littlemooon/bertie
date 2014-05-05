@@ -1,20 +1,33 @@
 
 // ====================================================
 
-/* UTILITIES */
+// UTILITIES
 
 // ====================================================
 
-.util-vertwrap {
+%clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+%section {
+  position: relative;
+  z-index: 100;
+  background-color: white;
+  padding: 60px 0 10% 0;
+}
+
+%vertwrap {
   position: relative;
   display: table;
   text-align: center;
   width: 100%;
-  > * {
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center; 
-  } 
+}
+%vertwrap  * {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center; 
 }
 
 // ====================================================
