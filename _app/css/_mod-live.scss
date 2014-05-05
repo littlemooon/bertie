@@ -1,0 +1,29 @@
+
+// ====================================================
+
+/* LIVE */
+
+// ====================================================
+
+#live {
+  @extend %section;
+  p {
+    text-align: center;
+  }
+}
+
+.live__images {
+  display: none;
+  ul {
+    @extend %vertwrap;
+    margin: 10% 0 20px 0;
+    li {
+      padding: 0 5%;
+    }
+  }
+  @include breakpoint(baby-bear) {
+    display: block;
+  }
+}
+
+//===================================================

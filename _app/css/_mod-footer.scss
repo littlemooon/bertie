@@ -1,0 +1,28 @@
+
+// ====================================================
+
+/* FOOTER */
+
+// ====================================================
+
+#footer {
+  padding-bottom: 0;
+}
+
+.footer__copyright {
+  width: 100%;
+  padding: 40px 0;
+  background: $color-secondary;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+  a {
+    color: $color-light;
+    padding: 20px 20px;
+    &:hover {
+      color: $color-light-alt;
+    }
+  }
+}
+
+//===================================================
