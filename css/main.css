@@ -308,6 +308,10 @@ ul {
   width: 100%;
   margin: 0 auto;
   display: block; }
+  .video__list:first-child {
+    padding-left: 0; }
+  .video__list:last-child {
+    padding-right: 0; }
   @media only screen and (min-width: 768px) {
     .video__list {
       padding: 0 5%;
