@@ -38,14 +38,13 @@ $(document).ready(function() {
   // smooth scrolling
 
   $(".nav__list__item a, .home__link").click(function() {
+    $($(this).attr("href"))
+      .velocity("scroll", { 
+        duration: 1200, 
+        easing: "easeInOutExpo", 
+        offset: -$('#nav').outerHeight()
+      });
 
-    var headerH = $('#nav').outerHeight();
-    $("html, body").animate({
-      scrollTop: $($(this).attr("href")).offset().top - headerH + "px"
-    }, {
-      duration: 1200,
-      easing: "easeInOutExpo"
-    });
     return false;
   });  
 
