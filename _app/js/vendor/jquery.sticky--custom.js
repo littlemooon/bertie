@@ -38,7 +38,8 @@
                             .removeClass(s.className);
                         s.stickyElement.parent().removeClass(s.className);
                         s.currentTop = null;
-                        $('.home__background').attr("src","img/bg.jpg");
+                        $('.bg1').removeClass("hide");
+                        $('.bg2').addClass("hide");
                     }
                 }
                 else {
@@ -56,7 +57,8 @@
                             .addClass(s.className);
                         s.stickyElement.parent().addClass(s.className);
                         s.currentTop = newTop;
-                        $('.home__background').attr("src","img/bg2.jpg");
+                        $('.bg1').addClass("hide");
+                        $('.bg2').removeClass("hide");
                     }
                 }
             }
