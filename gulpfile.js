@@ -3,8 +3,8 @@
 // OVERVIEW
 //======================================================
 
-// gulp watches for changes in 'app', processes and pushes to 'dist'
-// a jekyll server watches 'dist' and pushes to 'site'
+// gulp watches for changes in '_app', processes and pushes to the root
+// a jekyll server watches root and pushes to '_site'
 // jekyll runs over localhost:4000 by default
  
 // DISCLAIMER
@@ -29,6 +29,7 @@ var browserify = require('gulp-browserify');
 var imagemin = require('gulp-imagemin');
 var clean = require('gulp-clean');
 var exec = require('gulp-exec');
+var prefix = require('gulp-autoprefixer');
 
 // paths
 var app = './_app';
@@ -38,7 +39,6 @@ var js = '/js';
 var css = '/css';
 var img = '/img';
 var layouts = '/_layouts';
-var prefix = require('gulp-autoprefixer');
 
 //======================================================
 // PROCESS
