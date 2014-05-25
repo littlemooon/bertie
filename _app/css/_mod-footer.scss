@@ -6,22 +6,42 @@
 // ====================================================
 
 #footer {
-  padding-bottom: 0;
+  width: 100%;
+  padding: 2em 0;
+  background-color: $color-secondary;
+  a {
+    display: flex;
+    justify-content: center;
+  }
 }
 
-.footer__copyright {
-  width: 100%;
-  padding: 40px 0;
-  background: $color-secondary;
-  font-size: 13px;
-  font-weight: bold;
-  text-align: center;
-  a {
-    color: $color-light;
-    padding: 20px 20px;
-    &:hover {
-      color: $color-light-alt;
-    }
+.footer__moon {
+  @include moon(2rem, $color-light, $color-secondary);
+  float: left;
+  width: 2rem;
+  height: 2rem;
+  margin: 0 5px 0 0;
+}
+
+.footer__text {
+  float: left;
+  height: 2rem;
+  font-family: $font-text;
+  font-weight: normal;
+  color: $color-light;
+  h1 {
+    display: inline-block;
+    vertical-align: bottom;
+    height: 2rem;
+    margin: 0;
+    font-size: 2rem;
+  }
+  h2 {
+    display: inline-block;
+    vertical-align: bottom;
+    height: 2rem;
+    margin: 0;
+    font-size: 1.5rem;
   }
 }
 

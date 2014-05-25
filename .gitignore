@@ -1,4 +1,4 @@
-_site
-.DS_Store
 node_modules
-_app/js/bower_components
+.DS_Store
+.gitattributes
+.editorconfig

@@ -1,4 +1,0 @@
-name: Bertie Wright
-markdown: redcarpet
-pygments: true
-exclude: [node_modules, _app, package.json, gulpfile.js, CNAME, bower.json, .bowerrc]

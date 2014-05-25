@@ -26,4 +26,25 @@
 	}
 }
 
+@mixin moon($size, $color-big, $color-small) {
+	& > *:first-child {
+  	width: $size;
+    height: $size;
+    border-radius: 50%;
+		background-color: $color-big;
+	  transition: all 0.3s ease-out;
+	}
+	& > *:nth-child(2) {
+	  width: $size/2;
+    height: $size/2;
+    border-radius: 50%;
+		background-color: $color-small;
+	  position: relative;
+	  overflow: hidden;
+	  top: -$size;
+	  left: $size/2;
+	  transition: all 2s 0.6s ease-out;
+	}
+}
+
 // ====================================================
