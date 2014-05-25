@@ -15,33 +15,35 @@
   }
 }
 
+$moon: 3rem;
 .footer__moon {
-  @include moon(2rem, $color-light, $color-secondary);
+  @include moon($moon, $color-light, $color-secondary);
   float: left;
-  width: 2rem;
-  height: 2rem;
+  width: $moon;
+  height: $moon;
   margin: 0 5px 0 0;
 }
 
 .footer__text {
   float: left;
-  height: 2rem;
-  font-family: $font-text;
-  font-weight: normal;
+  height: $moon;
   color: $color-light;
   h1 {
-    display: inline-block;
-    vertical-align: bottom;
-    height: 2rem;
+    font-family: $font-text;
+    font-weight: normal;
+    height: $moon/2;
+    line-height: $moon/2;
     margin: 0;
-    font-size: 2rem;
+    font-size: $moon * 5/8;
   }
   h2 {
-    display: inline-block;
-    vertical-align: bottom;
-    height: 2rem;
+    float: left;
+    font-family: $font-text;
+    font-weight: normal;
+    height: $moon/2;
+    line-height: $moon/2;
     margin: 0;
-    font-size: 1.5rem;
+    font-size: $moon * 3/8;
   }
 }
 
