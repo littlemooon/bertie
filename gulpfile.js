@@ -3,9 +3,8 @@
 // OVERVIEW
 //======================================================
 
-// gulp watches for changes in '_app', processes and pushes to the root
-// a jekyll server watches root and pushes to '_site'
-// jekyll runs over localhost:4000 by default
+// gulp compiles sass, runs autoprefixer, concats js, watches 
+// for changes and serves with livereload... simple
  
 // DISCLAIMER
 
@@ -21,113 +20,84 @@
 var gulp = require('gulp'); 
 
 // plugins
-var jshint = require('gulp-jshint');
-var sass = require('gulp-sass');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var browserify = require('gulp-browserify');
-var imagemin = require('gulp-imagemin');
-var clean = require('gulp-clean');
-var exec = require('gulp-exec');
-var prefix = require('gulp-autoprefixer');
+var sass = require('gulp-sass'),
+    prefix = require('gulp-autoprefixer'),
+    connect = require('gulp-connect'),
+    concat = require('gulp-concat'),
+    uglify = require('gulp-uglify'),
+    imagemin = require('gulp-imagemin');
+
 
 // paths
-var app = './_app';
-var dist = '.';
-var site = './_site';
-var js = '/js';
-var css = '/css';
-var img = '/img';
-var layouts = '/_layouts';
+var app = './_app',
+    dist = './_dist',
+    css = '/css',
+    js = '/js',
+    img = '/img';
 
 //======================================================
 // PROCESS
 //======================================================
 
-// lint js
-gulp.task('lint', function() {
-    gulp.src(app + js + '/main.js')
-        .pipe(jshint())
-        .pipe(jshint.reporter('default'));
-});
-
-// compile sass and autoprefix
+// compile scss and autoprefix
 gulp.task('css', function() {
     gulp.src(app + css + '/*.scss')
         .pipe(sass())
-        .pipe(prefix(["last 1 version", "> 1%", "ie 8", "ie 7"], { cascade: true }))
-        .pipe(gulp.dest(dist + css));
+        .pipe(prefix(["last 2 versions", "> 1%", "ie 8", "ie 7"], { cascade: true }))
+        .pipe(gulp.dest(dist + css))
+        .pipe(connect.reload());
 });
 
-// concat and move js
-gulp.task('scripts', function() {
-    gulp.src(app + js + '/main.js')
-        // .pipe(browserify())
-        // .pipe(uglify())
-        .pipe(gulp.dest(dist + js));
+// concat js
+gulp.task('js', function() {
+    gulp.src(app + js + '/*.js')
+        .pipe(gulp.dest(dist + js))
+        .pipe(connect.reload());
     gulp.src(app + js + '/vendor/*.js')
         .pipe(concat('vendor.js'))
         .pipe(uglify())
-        .pipe(gulp.dest(dist + js));
+        .pipe(gulp.dest(dist + js))
+        .pipe(connect.reload());
 });
 
 // minify images
 gulp.task('images', function () {
     return gulp.src(app + img + '/*.jpg')
         .pipe(imagemin())
-        .pipe(gulp.dest(dist + img));
+        .pipe(gulp.dest(dist + img))
+        .pipe(connect.reload());
 });
 
 // move other files
 gulp.task('move', function () {
     gulp.src(app + '/*.{txt,html,ico}')
-        .pipe(gulp.dest(dist));
-    gulp.src(app + layouts + '/*.html')
-        .pipe(gulp.dest(dist + layouts));
+        .pipe(gulp.dest(dist))
+        .pipe(connect.reload());
     gulp.src(app + css + '/fonts/*')
-        .pipe(gulp.dest(dist + css + '/fonts'));
+        .pipe(gulp.dest(dist + css + '/fonts'))
+        .pipe(connect.reload());
 });
 
 //======================================================
 // SERVE
 //======================================================
 
-// run jekyll with watch
-gulp.task('jekyll', function () {
-    gulp.src('.')
-        .pipe(exec('jekyll serve -w'));
-});
-
-// clean
-gulp.task('clean', function () {
-    return gulp.src([
-            site, 
-            dist + js, 
-            dist + css,
-            dist + img,
-            dist + layouts
-        ], {read: false})
-        .pipe(clean({force: true}))
-        .pipe(gulp.dest(''));
-});
-
 // watch
 gulp.task('watch', function() {
-    gulp.watch(app + js + '/*.js', ['lint', 'scripts']);
     gulp.watch(app + css + '/*.scss', ['css']);
+    gulp.watch(app + js + '/*.js', ['js']);
     gulp.watch(app + img + '/*.jpg', ['images']);
-    gulp.watch([app + '/*.{txt,html,ico}', app + layouts + '/*.html'], ['move']);
-});
-
-// build
-gulp.task('build', ['clean'], function() {
-    return gulp.start('lint', 'css', 'scripts','images','move');
+    gulp.watch(app + '/*.{txt,html,ico}', ['move']);
 });
 
 // serve
-gulp.task('serve', ['build'], function() {
-    gulp.start('jekyll', 'watch');
+gulp.task('connect', function() {
+  connect.server({
+    root: dist,
+    port: 9000,
+    livereload: true
+  });
 });
 
 // default
-gulp.task('default', [ 'clean', 'build', 'serve' ], function(){});
+gulp.task('default', [ 'css', 'js', 'images', 'move', 'watch', 'connect' ]);

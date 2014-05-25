@@ -1,26 +1,30 @@
 {
   "name": "bertiewright",
   "version": "0.1.0",
-  "dependencies": {},
+  "author": "fred wright",
+  "description": "bertie wright musician",
+  "main": "app.js",
+  "scripts": {
+    "test": "foreman start"
+  },
+  "dependencies": {
+    "express": "~3.4.7"
+  },
   "devDependencies": {
     "gulp-util": "~2.2.14",
     "gulp": "~3.5.2",
+    "gulp-sass": "~0.7.0",
+    "gulp-autoprefixer": "0.0.7",
+    "gulp-connect": "~2.0.5",
     "gulp-concat": "~2.1.7",
     "gulp-uglify": "~0.2.1",
-    "gulp-jshint": "~1.4.0",
-    "gulp-sass": "~0.7.0",
-    "browserify": "~3.28.2",
-    "gulp-browserify": "~0.4.4",
-    "gulp-imagemin": "~0.1.5",
-    "gulp-clean": "~0.2.4",
-    "gulp-exec": "~1.0.4",
-    "gulp-autoprefixer": "0.0.7"
-  },
-  "engines": {
-    "node": ">=0.8.0"
+    "gulp-imagemin": "~0.1.5"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:fredwright/bertie-static.git"
+    "url": "git@github.com:fredwright/bertie.git"
+  },
+  "engines": {
+    "node": "0.10.x"
   }
 }

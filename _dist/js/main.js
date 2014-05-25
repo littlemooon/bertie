@@ -36,13 +36,13 @@ $(document).ready(function() {
   });
 
   // smooth scrolling
-
-  $(".nav__list__item a, .home__link").click(function() {
+  var headerHeight = $('#nav').outerHeight();
+  $(".nav__list__item a, .home__link").on("click", function() {
     $($(this).attr("href"))
       .velocity("scroll", { 
         duration: 1200, 
         easing: "easeInOutExpo", 
-        offset: -$('#nav').outerHeight()
+        offset: -headerHeight
       });
 
     return false;
@@ -51,7 +51,7 @@ $(document).ready(function() {
   // videos
 
   function videos() {
-    $(".video__list").fitVids();
+    $(".video").fitVids();
     optimizeYouTubeEmbeds1();
     $(".fluid-width-video-wrapper").css("padding-top", 0);
   }
