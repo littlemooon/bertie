@@ -25,12 +25,14 @@ var sass = require('gulp-sass'),
     connect = require('gulp-connect'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
-    imagemin = require('gulp-imagemin');
+    imagemin = require('gulp-imagemin'),
+    clean = require('gulp-clean');
 
 
 // paths
-var app = './_app',
-    dist = './_dist',
+var app = './app',
+    dist = './bertie',
+    deploy = '../../../Dropbox/Apps/bertie',
     css = '/css',
     js = '/js',
     img = '/img';
@@ -82,6 +84,12 @@ gulp.task('move', function () {
 // SERVE
 //======================================================
 
+// clean
+gulp.task('clean', function () {
+    return gulp.src(dist, {read: false})
+        .pipe(clean());
+});
+
 // watch
 gulp.task('watch', function() {
     gulp.watch(app + css + '/*.scss', ['css']);
@@ -99,5 +107,24 @@ gulp.task('connect', function() {
   });
 });
 
+// build
+gulp.task('build', [ 'clean', 'css', 'js', 'images', 'move' ]);
+
 // default
-gulp.task('default', [ 'css', 'js', 'images', 'move', 'watch', 'connect' ]);
+gulp.task('default', [ 'build', 'watch', 'connect' ]);
+
+//======================================================
+// DEPLOY
+//======================================================
+
+// clean the deployment repo
+gulp.task('cleandeploy', function () {
+    return gulp.src(deploy, {read: false})
+        .pipe(clean({force: true}));
+});
+
+// build and copy dist to the deploy repo
+gulp.task('deploy', ['build', 'cleandeploy'], function () {
+    gulp.src(dist + '/**/*.*', { base: './' })
+        .pipe(gulp.dest(deploy + '/..'));
+});
