@@ -43,7 +43,7 @@ var app = './app',
 
 // compile scss and autoprefix
 gulp.task('css', function() {
-    gulp.src(app + css + '/*.scss')
+    return gulp.src(app + css + '/*.scss')
         .pipe(sass())
         .pipe(prefix(["last 2 versions", "> 1%", "ie 8", "ie 7"], { cascade: true }))
         .pipe(gulp.dest(dist + css))
@@ -52,10 +52,12 @@ gulp.task('css', function() {
 
 // concat js
 gulp.task('js', function() {
-    gulp.src(app + js + '/*.js')
+    return gulp.src(app + js + '/*.js')
         .pipe(gulp.dest(dist + js))
         .pipe(connect.reload());
-    gulp.src(app + js + '/vendor/*.js')
+});
+gulp.task('vendorjs', function() {
+    return gulp.src(app + js + '/vendor/*.js')
         .pipe(concat('vendor.js'))
         .pipe(uglify())
         .pipe(gulp.dest(dist + js))
@@ -72,16 +74,18 @@ gulp.task('images', function () {
 
 // move other files
 gulp.task('move', function () {
-    gulp.src(app + '/*.{txt,html,ico}')
+    return gulp.src(app + '/*')
         .pipe(gulp.dest(dist))
         .pipe(connect.reload());
-    gulp.src(app + css + '/fonts/*')
-        .pipe(gulp.dest(dist + css + '/fonts'))
+});
+gulp.task('fonts', function () {
+    return gulp.src(app + css + '/fonts/*')
+        .pipe(gulp.dest(dist + css + '/'))
         .pipe(connect.reload());
 });
 
 //======================================================
-// SERVE
+// BUILD
 //======================================================
 
 // clean
@@ -90,12 +94,19 @@ gulp.task('clean', function () {
         .pipe(clean());
 });
 
+// build
+gulp.task('build', [ 'clean', 'css', 'js', 'vendorjs', 'images', 'move', 'fonts' ]);
+
+//======================================================
+// SERVE
+//======================================================
+
 // watch
 gulp.task('watch', function() {
     gulp.watch(app + css + '/*.scss', ['css']);
     gulp.watch(app + js + '/*.js', ['js']);
     gulp.watch(app + img + '/*.jpg', ['images']);
-    gulp.watch(app + '/*.{txt,html,ico}', ['move']);
+    gulp.watch(app + '/*', ['move']);
 });
 
 // serve
@@ -107,23 +118,20 @@ gulp.task('connect', function() {
   });
 });
 
-// build
-gulp.task('build', [ 'clean', 'css', 'js', 'images', 'move' ]);
-
-// default
+// build, serve and watch for changes
 gulp.task('default', [ 'build', 'watch', 'connect' ]);
 
 //======================================================
 // DEPLOY
 //======================================================
 
-// clean the deployment repo
+// clean deployment repo
 gulp.task('cleandeploy', function () {
     return gulp.src(deploy, {read: false})
         .pipe(clean({force: true}));
 });
 
-// build and copy dist to the deploy repo
+// build and copy dist to deployment repo
 gulp.task('deploy', ['build', 'cleandeploy'], function () {
     gulp.src(dist + '/**/*.*', { base: './' })
         .pipe(gulp.dest(deploy + '/..'));

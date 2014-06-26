@@ -20,50 +20,50 @@ $color-secondary-alt: #e81123;
 
 @font-face {
   font-family: "Socialglyphs";
-  src: url("fonts/socialglyphs-regular.eot");
-  src: url("fonts/socialglyphs-regular.eot?#iefix") format("embedded-opentype"),
-       url("fonts/socialglyphs-regular.svg#socialglyphs-regular") format("svg"), 
-  	   url("fonts/socialglyphs-regular.woff") format("woff");
+  src: url("socialglyphs-regular.eot");
+  src: url("socialglyphs-regular.eot?#iefix") format("embedded-opentype"),
+       url("socialglyphs-regular.svg#socialglyphs-regular") format("svg"), 
+  	   url("socialglyphs-regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Oswald";
-  src: url("fonts/oswald-webfont.eot");
-  src: url("fonts/oswald-webfont.eot?#iefix") format("embedded-opentype"),
-       url("fonts/oswald-webfont.woff") format("woff"),
-       url("fonts/oswald-webfont.otf") format("opentype"),
-       url("fonts/oswald-webfont.ttf") format("truetype"),
-       url("fonts/oswald-webfont.svg#oswald") format("svg");
+  src: url("oswald-webfont.eot");
+  src: url("oswald-webfont.eot?#iefix") format("embedded-opentype"),
+       url("oswald-webfont.woff") format("woff"),
+       url("oswald-webfont.otf") format("opentype"),
+       url("oswald-webfont.ttf") format("truetype"),
+       url("oswald-webfont.svg#oswald") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 @media screen and (max-device-width: 480px) {
   @font-face {
     font-family: "Oswald";
-    src: url("fonts/oswald-webfont.woff") format("woff"),
-         url("fonts/oswald-webfont.otf") format("opentype"),
-         url("fonts/oswald-webfont.ttf") format("truetype"),
-         url("fonts/oswald-webfont.svg#oswald") format("svg");
+    src: url("oswald-webfont.woff") format("woff"),
+         url("oswald-webfont.otf") format("opentype"),
+         url("oswald-webfont.ttf") format("truetype"),
+         url("oswald-webfont.svg#oswald") format("svg");
 }}
 @font-face {
   font-family: "Oswald Light";
-  src: url("fonts/oswald-light-webfont.eot");
-  src: url("fonts/oswald-light-webfont.eot?#iefix") format("embedded-opentype"),
-       url("fonts/oswald-light-webfont.woff") format("woff"),
-       url("fonts/oswald-light-webfont.otf") format("opentype"),
-       url("fonts/oswald-light-webfont.ttf") format("truetype"),
-       url("fonts/oswald-light-webfont.svg#oswald") format("svg");
+  src: url("oswald-light-webfont.eot");
+  src: url("oswald-light-webfont.eot?#iefix") format("embedded-opentype"),
+       url("oswald-light-webfont.woff") format("woff"),
+       url("oswald-light-webfont.otf") format("opentype"),
+       url("oswald-light-webfont.ttf") format("truetype"),
+       url("oswald-light-webfont.svg#oswald") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 @media screen and (max-device-width: 480px) {
   @font-face {
     font-family: "Oswald Light";
-    src: url("fonts/oswald-light-webfont.woff") format("woff"),
-         url("fonts/oswald-light-webfont.otf") format("opentype"),
-         url("fonts/oswald-light-webfont.ttf") format("truetype"),
-         url("fonts/oswald-light-webfont.svg#oswald") format("svg");
+    src: url("oswald-light-webfont.woff") format("woff"),
+         url("oswald-light-webfont.otf") format("opentype"),
+         url("oswald-light-webfont.ttf") format("truetype"),
+         url("oswald-light-webfont.svg#oswald") format("svg");
 }}
 
 $font-header: "Oswald Light", "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", "TeXGyreHerosRegular", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; 
