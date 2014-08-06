@@ -15,7 +15,7 @@
   }
 }
 
-$moon: 3rem;
+$moon: 2rem;
 .footer__moon {
   @include moon($moon, $color-light, $color-secondary);
   float: left;
@@ -31,19 +31,10 @@ $moon: 3rem;
   h1 {
     font-family: $font-text;
     font-weight: normal;
-    height: $moon/2;
-    line-height: $moon/2;
+    height: $moon;
+    line-height: $moon * 7/8;
     margin: 0;
-    font-size: $moon * 5/8;
-  }
-  h2 {
-    float: left;
-    font-family: $font-text;
-    font-weight: normal;
-    height: $moon/2;
-    line-height: $moon/2;
-    margin: 0;
-    font-size: $moon * 3/8;
+    font-size: $moon;
   }
 }
 
