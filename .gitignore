@@ -1,5 +1,3 @@
 node_modules
 .DS_Store
-.gitattributes
-.editorconfig
-bertie
+dist

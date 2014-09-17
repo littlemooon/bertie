@@ -25,14 +25,11 @@ var sass = require('gulp-sass'),
     connect = require('gulp-connect'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
-    imagemin = require('gulp-imagemin'),
-    clean = require('gulp-clean');
-
+    imagemin = require('gulp-imagemin');
 
 // paths
 var app = './app',
-    dist = './bertie',
-    deploy = '../../../Dropbox/Apps/bertie',
+    dist = './dist',
     css = '/css',
     js = '/js',
     img = '/img';
@@ -67,7 +64,7 @@ gulp.task('vendorjs', function() {
 // minify images
 gulp.task('images', function () {
     return gulp.src(app + img + '/*.jpg')
-        .pipe(imagemin())
+        // .pipe(imagemin())
         .pipe(gulp.dest(dist + img))
         .pipe(connect.reload());
 });
@@ -88,14 +85,8 @@ gulp.task('fonts', function () {
 // BUILD
 //======================================================
 
-// clean
-gulp.task('clean', function () {
-    return gulp.src(dist, {read: false})
-        .pipe(clean());
-});
-
 // build
-gulp.task('build', [ 'clean', 'css', 'js', 'vendorjs', 'images', 'move', 'fonts' ]);
+gulp.task('build', [ 'css', 'js', 'vendorjs', 'images', 'move', 'fonts' ]);
 
 //======================================================
 // SERVE
@@ -120,19 +111,3 @@ gulp.task('connect', function() {
 
 // build, serve and watch for changes
 gulp.task('default', [ 'build', 'watch', 'connect' ]);
-
-//======================================================
-// DEPLOY
-//======================================================
-
-// clean deployment repo
-gulp.task('cleandeploy', function () {
-    return gulp.src(deploy, {read: false})
-        .pipe(clean({force: true}));
-});
-
-// build and copy dist to deployment repo
-gulp.task('deploy', ['build', 'cleandeploy'], function () {
-    gulp.src(dist + '/**/*.*', { base: './' })
-        .pipe(gulp.dest(deploy + '/..'));
-});
