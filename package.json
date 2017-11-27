@@ -1,19 +1,23 @@
 {
   "name": "bertie",
-  "version": "0.1.0",
-  "author": "fred wright",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "fredwright0@gmail.com",
   "description": "bertie wright musician",
   "scripts": {
     "build": "gulp build",
     "dev": "gulp",
     "start": "serve ./dist --single",
-    "test": "foreman start"
+    "deploy": "now && now alias"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:fredwright/bertie.git"
+    "url": "https://github.com/littlemooon/bertie"
   },
-  "dependencies": {
+  "now": {
+    "alias": "bertiewright.co.uk"
+  },
+  "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-clean": "^0.3.2",
@@ -23,6 +27,6 @@
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^2.1.2",
     "gulp-util": "^3.0.8",
-    "serve": "^5.1.2"
+    "serve": "^6.4.1"
   }
 }
